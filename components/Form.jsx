@@ -15,7 +15,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
         onSubmit={handleSubmit}
         className="glassmorphism mt-10 w-full max-w-2xl flex flex-col gap-8 "
       >
-        <lable>
+        <label>
           <span className="font-satoshi font-semibold text-base text-gray-700">
             Your AI Prompt
           </span>
@@ -26,8 +26,8 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
             required
             className="form_textarea"
           />
-        </lable>
-        <lable>
+        </label>
+        <label>
           <span className="font-satoshi font-semibold text-base text-gray-700">
             Tag{' '}
             <span className="font-normal">
@@ -41,7 +41,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
             required
             className="form_input"
           />
-        </lable>
+        </label>
         <div className="flex-end mx-3 mb-5 gap-4">
           <Link href="/" className="text-gray-500 text-sm">
             Cancel
