@@ -19,14 +19,13 @@ const handler = NextAuth({
       session.user.id = sessionUser._id.toString();
       return session;
     },
-    async signIn({ profile }) {
+    async signIn({ account, profile }) {
       try {
         await connectToDB();
         // check if a user already exists
         const userExists = await User.findOne({
           email: profile.email,
         });
-
         // if not, create a new user
         if (!userExists) {
           await User.create({
