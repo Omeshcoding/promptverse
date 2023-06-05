@@ -29,7 +29,6 @@ const Feed = () => {
   };
   useEffect(() => {
     fetchPosts();
-    console.log(posts);
   }, []);
 
   const filterPrompts = (searchtext) => {
@@ -53,7 +52,6 @@ const Feed = () => {
   };
   const handleTagClick = (tagname) => {
     setSearchText(tagname);
-    console.log(tagname);
     const searchResult = filterPrompts(tagname);
     setSearchedResult(searchResult);
   };

@@ -3,12 +3,19 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { useSession } from 'next-auth/react';
 import { usePathname, useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
   const pathName = usePathname();
   const router = useRouter();
   const { data: session } = useSession();
   const [copied, setCopied] = useState('');
+
+  const handleUserProfile = () => {
+    return router.push(
+      `/profile/${post.creator._id}?name=${post.creator.username}`
+    );
+  };
 
   const handleCopy = () => {
     setCopied(post.prompt);
@@ -26,8 +33,11 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
           className="rounded-full object-contain"
         />
 
-        <div className="flex flex-col">
-          <h3 className="font-satoshi font-semibold text-gray-900">
+        <div
+          className="flex flex-col cursor-pointer"
+          onClick={handleUserProfile}
+        >
+          <h3 className="font-satoshi font-semibold text-gray-900 ">
             {post.creator.username}
           </h3>
           <p className="font-inter text-sm text-gray-500">
