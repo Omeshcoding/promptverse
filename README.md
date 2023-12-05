@@ -11,7 +11,6 @@
 ## Tech Stack
 1. Next.js
 2. TailwindCSS
-3. Node.js
 4. Next-Auth
-5. Express
-6. MongoDB
+5. MongoDB
+6. Mongoose
